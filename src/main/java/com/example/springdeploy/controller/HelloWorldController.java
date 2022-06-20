@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
 @RestController
 public class HelloWorldController {
 
@@ -19,7 +21,7 @@ public class HelloWorldController {
     @GetMapping("/{name}")
     public String helloName(@PathVariable String name) {
 
-        if (name.toLowerCase() == "miriam") {
+        if (Objects.equals(name.toLowerCase(), "miriam")) {
             return "Eii.. " + name + " No te quiero ni ver!!! Fuera...\n\n Has dicho que Telegram es una caca....";
         }
 
