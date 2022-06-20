@@ -19,6 +19,10 @@ public class HelloWorldController {
     @GetMapping("/{name}")
     public String helloName(@PathVariable String name) {
 
+        if (name.toLowerCase() == "miriam") {
+            return "Eii.. " + name + " No te quiero ni ver!!! Fuera...\n\n Has dicho que Telegram es una caca....";
+        }
+
         return "Hola, "+name+" ¿Cómo estás?";
     }
 }
